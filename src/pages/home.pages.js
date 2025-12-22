@@ -6,15 +6,19 @@ export class HomePage {
       this.profileName = page.locator(".dropdown-toggle").describe('Разворачивание dropdown')
       this.mainContent = (page.locator('main'));
       this.mainContentnav = (page.locator('nav'));
+      this.articleButton = page.getByRole('link', { name: 'New Article' }).describe('Кнопка New Article');
+
     }
-async gotoregister (){
+async goToRegister (url){
+    await this.page.goto(url);
     await this.singupbutton.click();
 }
-async gotologin (){
-    await this.loginbutton.click();
-}
-async openwebsite (url){
+async goToLogin (url){
     await this.page.goto(url);
+    await this.loginbutton.click();
+}    
+async goToArticle (){
+    await this.articleButton.click();
+
 }
-    
 }

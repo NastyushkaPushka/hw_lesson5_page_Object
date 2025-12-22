@@ -6,25 +6,15 @@ export class RegistrationPage {
         this.passwordinput = page.getByRole('textbox', { name: 'Password' }).describe('Инпут  с паролем');
         this.singupbutton = page.getByRole('button', { name: 'Sign up' }).describe('Кнопка Сохранить');
     }
-async focusname (){
-    await this.nameinput.click();
+async registration (name, email, password){
+    await this.nameinput.waitFor({ state: 'visible' });
+    await this.nameinput.click()
+    await this.nameinput.fill(name)
+    await this.emailinput.click()
+    await this.emailinput.fill(email)
+    await this.passwordinput.click()
+    await this.passwordinput.fill(password)
+    await this.singupbutton.click()
 }
-async fillname(name){
-    await this.nameinput.fill(name);
-}
-async focusemail (){
-    await this.emailinput.click();
-}
-async fillemail(email){
-    await this.emailinput.fill(email);
-}
-async focuspassword (){
-    await this.passwordinput.click();
-}
-async fillpassword (password){
-    await this.passwordinput.fill(password);
-}
-async registretion(){
-    await this.singupbutton.click();
-}
+
 }

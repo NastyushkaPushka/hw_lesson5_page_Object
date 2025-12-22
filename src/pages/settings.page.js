@@ -6,16 +6,13 @@
         this.updatebutton = page.getByRole('button', { name: 'Update Settings' }).describe('Кнопка Сохранить');
         this.mainContent = page.locator('main');
     }
-    async openeditpage () {
+    async openEditPage () {
         await this.editbutton.click();
     }
-    async openaboutyou() {
-        await this.aboutyouinput.click();
+    async changeAboutYou(description) {
+        await this.aboutyouinput.click()
+        await this.aboutyouinput.fill(description)
+        await this.updatebutton.click()
     }
-    async fillaboutyou (description) {
-        await this.aboutyouinput.fill(description);
-    }
-    async saveupdatesetting () {
-        await this.updatebutton.click();
-    }
+   
  }  

@@ -6,19 +6,13 @@ export class LoginPage {
         this.loginbutton = page.getByRole('button', { name: 'Login' }).describe('Кнопка login');
     }
 
-async focusemail (){
-    await this.emailinput.click();
+async login (email, password){
+    await this.emailinput.waitFor({ state: 'visible' });
+    await this.emailinput.click()
+    await this.emailinput.fill(email)
+    await this.passwordinput.click()
+    await this.passwordinput.fill(password)
+    await this.loginbutton.click()
 }
-async fillemail(email){
-    await this.emailinput.fill(email);
-}
-async focuspassword (){
-    await this.passwordinput.click();
-}
-async fillpassword (password){
-    await this.passwordinput.fill(password);
-}
-async entrance(){
-    await this.loginbutton.click();
-}
+
 }
