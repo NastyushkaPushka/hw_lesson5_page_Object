@@ -17,7 +17,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v6.0.1
     - name: SetUp Node.js enviroment 
-      uses: actions/setup-node@6.2.0
+      uses: actions/setup-node@v4
     - name: Установка nmp пакеты из package.json 
       run: npm install
     - name: Установка браузеров
