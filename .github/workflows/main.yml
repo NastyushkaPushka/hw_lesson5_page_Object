@@ -7,6 +7,7 @@ on:
       - main
 # Ручной запуск 
   workflow_dispatch: 
+# Задания
 jobs: 
   pw5Tests:
   #ОП
