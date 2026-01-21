@@ -21,7 +21,7 @@ jobs:
     - name: Установка nmp пакеты из package.json 
       run: npm install
     - name: Установка браузеров
-      run: npx playwright instal --with-deps
+      run: npx playwright install --with-deps
     - name: Запуск автотестов
       run: npm t
   
