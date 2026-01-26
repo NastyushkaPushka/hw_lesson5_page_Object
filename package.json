@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
-    "report": "npx playwright show-report"
+    "test": "npx playwright test --headed", 
+    "test": "npx playwright test",  // По умолчанию headless
+
+    "test:ci": "npx playwright test --headless"  // Для CI
   },
   "keywords": [],
   "author": "",
