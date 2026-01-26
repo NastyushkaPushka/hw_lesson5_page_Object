@@ -12,6 +12,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.57.0",
+    "allure-playwright": "^2.13.0";
     "@types/node": "^24.10.1"
   },
   "dependencies": {
